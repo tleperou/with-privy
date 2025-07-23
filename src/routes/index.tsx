@@ -1,25 +1,24 @@
-import { component$ } from "@builder.io/qwik";
+import { component$, useContext } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
+import { WalletContext } from "./context";
 
-export default component$(() => {
-  return (
-    <>
-      <h1>Hi 👋</h1>
-      <div>
-        Can't wait to see what you build with qwik!
-        <br />
-        Happy coding.
-      </div>
-    </>
-  );
-});
+export default component$(
+  /**
+   *
+   * @returns
+   */
+  () => {
+    const wallet = useContext(WalletContext);
+
+    return (
+      <>
+        <h1>Index {wallet.value?.address.substring(0, 6)}</h1>
+        <p>Lorem ipsum</p>
+      </>
+    );
+  },
+);
 
 export const head: DocumentHead = {
-  title: "Welcome to Qwik",
-  meta: [
-    {
-      name: "description",
-      content: "Qwik site description",
-    },
-  ],
+  title: "Qwik, Privy and React",
 };
