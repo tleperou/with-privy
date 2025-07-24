@@ -3,7 +3,7 @@
 import { noSerialize } from "@builder.io/qwik";
 import { qwikify$ } from "@builder.io/qwik-react";
 import { PropsWithChildren, useEffect, useRef } from "react";
-import { PrivyProvider, usePrivy } from "@privy-io/react-auth";
+import { PrivyProvider, User, usePrivy } from "@privy-io/react-auth";
 import { PrivyContextType } from "~/routes/index.context";
 
 interface Props extends PropsWithChildren {
@@ -43,7 +43,7 @@ export default qwikify$(
  */
 function WithPrivy(props: Props) {
   const privy = usePrivy();
-  const last = useRef(privy.user);
+  const last = useRef<User | null>();
 
   useEffect(
     /**

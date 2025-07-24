@@ -9,7 +9,7 @@ import {
 import type { Wallet as WalletServer } from "@privy-io/server-auth";
 import type { Wallet as WalletClient } from "@privy-io/react-auth";
 import type { PrivyInterface } from "@privy-io/react-auth";
-import { useLoader } from "./indexloader";
+import { useLoader } from "./index.loader";
 
 /**
  *
