@@ -1,4 +1,4 @@
-import { Slot, component$, $ } from "@builder.io/qwik";
+import { Slot, component$ } from "@builder.io/qwik";
 import { useAppContext } from "./index.context";
 import { useLoader } from "./indexloader";
 export { useLoader } from "./indexloader";
@@ -16,10 +16,10 @@ export default component$(
 
     return (
       <AppProvider
-        onInit$={$((instance) => {
-          console.log(">> init");
+        onReady$={(instance) => {
+          console.log(">> init", { instance });
           privy.value = instance;
-        })}
+        }}
       >
         <AppHeader />
         <Slot />
