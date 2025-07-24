@@ -1,6 +1,6 @@
 import { component$, useContext } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
-import { WalletContext } from "./context";
+import { WalletContext } from "./index.context";
 
 export default component$(
   /**

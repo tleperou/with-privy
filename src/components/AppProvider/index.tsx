@@ -4,7 +4,7 @@ import { QRL, noSerialize } from "@builder.io/qwik";
 import { qwikify$ } from "@builder.io/qwik-react";
 import { PropsWithChildren, useEffect } from "react";
 import { PrivyProvider, usePrivy } from "@privy-io/react-auth";
-import { PrivyContextType } from "~/routes/context";
+import { PrivyContextType } from "~/routes/index.context";
 
 interface Props extends PropsWithChildren {
   onInit: QRL<(instance: PrivyContextType) => void>;

@@ -1,7 +1,7 @@
 import { Slot, component$, $ } from "@builder.io/qwik";
-import { useAppContext } from "./context";
-import { useLoader } from "./loader";
-export { useLoader } from "./loader";
+import { useAppContext } from "./index.context";
+import { useLoader } from "./indexloader";
+export { useLoader } from "./indexloader";
 import AppHeader from "~/components/AppHeader";
 import AppProvider from "~/components/AppProvider";
 

@@ -1,5 +1,5 @@
 import { component$, useContext } from "@builder.io/qwik";
-import { PrivyContext, WalletContext } from "~/routes/context";
+import { PrivyContext, WalletContext } from "~/routes/index.context";
 
 export default component$(() => {
   const privy = useContext(PrivyContext);
