@@ -14,6 +14,11 @@ export default component$(
     const data = useLoader();
     const { privy } = useAppContext(data);
 
+    console.log(
+      ">> [layout] /routes/layout.tsx",
+      data.value.user?.wallet?.address.substring(0, 8),
+    );
+
     return (
       <AppProvider
         onReady$={(instance) => {
