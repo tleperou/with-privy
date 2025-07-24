@@ -33,7 +33,7 @@ export default qwikify$(
       </PrivyProvider>
     );
   },
-  { eagerness: "load" },
+  { eagerness: "load", tagName: "app-provider" },
 );
 
 /**
@@ -43,7 +43,7 @@ export default qwikify$(
  */
 function WithPrivy(props: Props) {
   const privy = usePrivy();
-  const last = useRef(privy);
+  const last = useRef(privy.user);
 
   useEffect(
     /**
@@ -55,9 +55,11 @@ function WithPrivy(props: Props) {
         return;
       }
 
-      if (privy === last.current) {
+      if (privy.user === last.current) {
         return;
       }
+
+      last.current = privy.user;
 
       props.onReady(noSerialize(privy));
     },
