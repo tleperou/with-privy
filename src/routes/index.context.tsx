@@ -59,8 +59,13 @@ export function useAppContext(data: UseAppContextProps) {
     async function setWalletOnPrivyChanged({ track }) {
       track(() => privy.value);
 
+      if (!privy.value?.ready) {
+        return;
+      }
+
       wallet.value = extractWallet(privy);
     },
+    { eagerness: "idle" },
   );
 
   return { wallet, privy };
