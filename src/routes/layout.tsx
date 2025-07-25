@@ -22,7 +22,7 @@ export default component$(
     return (
       <AppProvider
         onReady$={(instance) => {
-          console.log(">> init", { instance });
+          console.log(">> [layout] /routes/layout.tsx", { ready: instance });
           privy.value = instance;
         }}
       >

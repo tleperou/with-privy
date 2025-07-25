@@ -1,8 +1,6 @@
 import { routeLoader$ } from "@builder.io/qwik-city";
 import { PrivyClient } from "@privy-io/server-auth";
 
-let i = 1;
-
 // eslint-disable-next-line qwik/loader-location
 export const useLoader = routeLoader$(
   /**
@@ -28,7 +26,11 @@ export const useLoader = routeLoader$(
     try {
       const { userId } = await privy.verifyAuthToken(privyToken || "");
       const user = await privy.getUserById(userId);
-      console.log(">>", i++, "[loader] /routes/layout.tsx");
+      console.log(
+        ">>",
+        "[loader] /routes/layout.tsx",
+        user.wallet?.address.substring(0, 8),
+      );
       return { user };
     } catch (e) {
       console.log("error", e);
