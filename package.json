@@ -11,6 +11,7 @@
     "build": "qwik build",
     "build.client": "vite build",
     "build.preview": "vite build --ssr src/entry.preview.tsx",
+    "build.server": "vite build -c adapters/bun/vite.config.ts",
     "build.types": "tsc --incremental --noEmit",
     "deploy": "wrangler pages deploy ./dist",
     "dev": "vite --mode ssr",
@@ -19,6 +20,7 @@
     "fmt.check": "prettier --check .",
     "lint": "eslint \"src/**/*.ts*\"",
     "preview": "qwik build preview && vite preview --port 443 --open",
+    "serve": "bun server/entry.bun.js",
     "start": "vite --port 8080 --mode ssr",
     "qwik": "qwik"
   },
@@ -29,6 +31,7 @@
     "@eslint/js": "latest",
     "@privy-io/react-auth": "^2.20.0",
     "@privy-io/server-auth": "^1.28.8",
+    "@types/bun": "*",
     "@types/node": "20.14.11",
     "@types/react": "^18.2.28",
     "@types/react-dom": "^18.2.13",
