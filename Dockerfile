@@ -10,4 +10,4 @@ ENV CI=true
 RUN bun install
 RUN bun run build
 
-CMD ["bun", "run", "serve"]
+CMD ["bun", "./server/entry.bun.js"]
