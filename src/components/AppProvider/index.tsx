@@ -33,7 +33,7 @@ export default qwikify$(
       </PrivyProvider>
     );
   },
-  { eagerness: "hover", tagName: "app-provider" },
+  { eagerness: "load", tagName: "app-provider" },
 );
 
 /**
