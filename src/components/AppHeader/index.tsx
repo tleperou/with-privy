@@ -5,6 +5,8 @@ export default component$(() => {
   const privy = useContext(PrivyContext);
   const wallet = useContext(WalletContext);
 
+  console.log(">> [AppHeader]", wallet.value?.address?.substring(0, 8));
+
   return (
     <header>
       {wallet.value ? (

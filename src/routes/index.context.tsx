@@ -50,6 +50,12 @@ export function useAppContext(data: UseAppContextProps) {
   const wallet = useSignal<WalletContextType>(initialWallet);
   useContextProvider(WalletContext, wallet);
 
+  console.log(
+    ">> [context] /routes/index.context.tsx",
+    initialWallet?.address.substring(0, 8),
+    wallet.value?.address?.substring(0, 8),
+  );
+
   useTask$(
     /**
      *
